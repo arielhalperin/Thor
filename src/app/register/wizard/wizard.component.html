@@ -1,0 +1,10 @@
+<p-dialog [(visible)]="display" [width]="700">
+  <p-header>
+    <thor-wizard-steps></thor-wizard-steps>
+
+  </p-header>
+  Wizard Works
+  <p-footer>
+    <button pButton type="button" (click)="moveNextStep()" label="Next"></button>
+  </p-footer>
+</p-dialog>

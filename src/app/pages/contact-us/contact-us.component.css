@@ -1,0 +1,8 @@
+#contactUsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#contactUsContainer > * {
+  width: 100%;
+}

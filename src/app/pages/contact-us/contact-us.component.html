@@ -1,0 +1,20 @@
+<h3>
+  Contact Us
+</h3>
+<div id="contactUsContainer">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+    <mat-form-field>
+      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea id="content" [ngModel] name="message" matInput placeholder="Message"></textarea>
+    </mat-form-field>
+
+    <button pButton type="button" (click)="onClear(f)">Clear</button>
+    <button pButton type="submit" >Save</button>
+
+  </form>
+</div>
