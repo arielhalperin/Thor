@@ -1,19 +1,21 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 
 @Injectable()
 export class CustomerService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getCustomers() {
-    this.http.get('customers.json').subscribe(data => {
-      debugger;
-      console.log(data);
-      return data;
+    try {
+      return this.http.get('../../assets/customers.json');
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
 
-    }, error => console.log(error));
   }
 
 }

@@ -53,8 +53,8 @@ export class WizardStepsComponent implements OnInit {
     ];
   }
 
-  moveNextStep(){
-    this.activeIndex +=1;
-    this.activeIndexChange.emit(this.activeIndex);
+  moveNextStep() {
+    this.activeIndex += 1;
+    // this.activeIndexChange.emit(this.activeIndex);
   }
 }

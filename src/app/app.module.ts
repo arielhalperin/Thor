@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import {CustomersModule} from "./customers/customers.module";
-import {HeaderModule} from "./header/header.module";
-import {routing} from "./app.routing";
-import {PagesModule} from "./pages/pages.module";
+import {CustomersModule} from './customers/customers.module';
+import {HeaderModule} from './header/header.module';
+import {routing} from './app.routing';
+import {PagesModule} from './pages/pages.module';
 
 
 @NgModule({
