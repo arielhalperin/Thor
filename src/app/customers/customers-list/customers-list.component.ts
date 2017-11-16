@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CustomerService} from '../shared/customer.service';
 import {Customer} from '../shared/customer';
 
@@ -11,11 +11,14 @@ export class CustomersListComponent implements OnInit {
 
   customers: Customer[];
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService) {
+  }
 
   ngOnInit() {
-     this.customers = this.customerService.getCustomers().subscribe(customers => this.customers = customers);
-     console.log(this.customers);
+    this.customerService.getCustomers().subscribe(customers => {
+      this.customers = customers;
+      console.log(this.customers);
+    });
   }
 
 }
