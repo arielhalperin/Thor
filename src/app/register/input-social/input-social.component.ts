@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {WizardService} from '../shared/wizard.service';
 
 @Component({
   selector: 'thor-input-social',
@@ -8,9 +9,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class InputSocialComponent implements OnInit {
 
-  constructor() { }
+  constructor(private wizardService: WizardService) { }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    this.wizardService.stepChange(1);
   }
 
 }
