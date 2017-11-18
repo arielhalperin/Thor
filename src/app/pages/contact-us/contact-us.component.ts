@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {FormControl, NgForm, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'thor-contact-us',
@@ -9,25 +9,32 @@ import {FormControl, NgForm, Validators} from '@angular/forms';
 })
 export class ContactUsComponent implements OnInit {
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  contactUsForm: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
+    this.contactUsForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      message: new FormControl(null, Validators.required),
+    });
+
+
+
   }
 
   getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-      this.email.hasError('email') ? 'Not a valid email' :
+    debugger;
+    return this.contactUsForm.controls['email'].hasError('required') ? 'You must enter a value' :
+      this.contactUsForm.controls['email'].hasError('email') ? 'Not a valid email' :
         '';
   }
 
-  onSubmit(form: NgForm){
-
-    form.resetForm();
+  onSubmit(){
+    console.log(this.contactUsForm);
   }
 
-  onClear(form: NgForm){
-    form.resetForm();
+  onClear(){
+    this.contactUsForm.reset();
   }
 }

@@ -1,0 +1,19 @@
+<form [formGroup]="generalInformationForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input type="text" formControlName="informationFirstName" class="form-control" id="informationFirstName" placeholder="First Name:">
+  </div>
+  <div class="form-group">
+    <input type="text" formControlName="informationLastName" class="form-control"  id="informationLastName" placeholder="Last Name:">
+  </div>
+  <div class="form-group">
+    <input type="email" formControlName="informationEmail" class="form-control" id="informationEmail" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <input type="password" formControlName="informationPassword" class="form-control" id="informationPassword" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <input type="password" formControlName="informationRepeatPassword" class="form-control" id="informationRepeatPassword" placeholder="Repeat Password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

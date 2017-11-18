@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WizardStepsComponent } from './wizard-steps.component';
+import { InputInterestsListComponent } from './input-interests-list.component';
 
-describe('WizardStepsComponent', () => {
-  let component: WizardStepsComponent;
-  let fixture: ComponentFixture<WizardStepsComponent>;
+describe('InputInterestsListComponent', () => {
+  let component: InputInterestsListComponent;
+  let fixture: ComponentFixture<InputInterestsListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WizardStepsComponent ]
+      declarations: [ InputInterestsListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WizardStepsComponent);
+    fixture = TestBed.createComponent(InputInterestsListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

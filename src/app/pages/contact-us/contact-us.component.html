@@ -1,12 +1,18 @@
-<div class="col-md-3">
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<div class="col-md-offset-3 col-md-6">
+  <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      <label for="contactUsEmail">Email address</label>
+      <input type="email" formControlName="email" class="form-control" id="contactUsEmail" placeholder="Email">
+      <span class="invalidSpan" *ngIf ="!contactUsForm.get('email').valid && contactUsForm.get('email').touched">
+        Please Enter valid Email
+      </span>
     </div>
     <div class="form-group">
       <label for="contactUsMessage">Message</label>
-      <textarea class="form-control" id="contactUsMessage" placeholder="Message"></textarea>
+      <textarea formControlName="message" class="form-control" id="contactUsMessage" placeholder="Message"></textarea>
+      <span class="invalidSpan" *ngIf ="!contactUsForm.get('message').valid && contactUsForm.get('message').touched">
+        Message is required
+      </span>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>

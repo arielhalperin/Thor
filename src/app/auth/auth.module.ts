@@ -6,6 +6,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import {MatButtonModule, MatMenuModule, MatToolbarModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule} from "@angular/router";
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import {RouterModule} from "@angular/router";
     BrowserAnimationsModule,
     MatButtonModule,
     RouterModule,
+    FormsModule
   ],
   declarations: [LoginComponent, LogoutComponent, AuthenticationComponent],
   exports:[

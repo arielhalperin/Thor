@@ -1,8 +1,8 @@
-#contactUsContainer {
-  display: flex;
-  flex-direction: column;
+.form-control.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+.invalidSpan{
+  color: red;
 }
 
-#contactUsContainer > * {
-  width: 100%;
-}
+

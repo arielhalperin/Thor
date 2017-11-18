@@ -1,0 +1,18 @@
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p-steps [model]="items" [(activeIndex)]="activeIndex" styleClass="steps-custom"></p-steps>
+  </div>
+  <div class="panel-body" [ngSwitch]="activeIndex">
+    <div *ngSwitchCase="0">
+      <thor-input-information></thor-input-information>
+    </div>
+    <div *ngSwitchCase="1">
+      <thor-input-social></thor-input-social>
+    </div>
+    <div *ngSwitchCase="2">
+      <thor-input-interests-list></thor-input-interests-list>
+    </div>
+  </div>
+</div>
