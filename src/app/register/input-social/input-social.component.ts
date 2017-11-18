@@ -14,8 +14,8 @@ export class InputSocialComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick() {
-    this.wizardService.stepChange(1);
+  onClick(step: number) {
+    this.wizardService.stepChange(step);
   }
 
 }
