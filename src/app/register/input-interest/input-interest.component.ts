@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {Interest} from '../shared/interest';
+import {FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'thor-input-interest',
@@ -10,6 +11,7 @@ import {Interest} from '../shared/interest';
 export class InputInterestComponent implements OnInit {
 
   @Input() interest: Interest;
+  @Input() form: FormGroup;
 
   constructor() { }
 

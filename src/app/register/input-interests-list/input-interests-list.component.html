@@ -1,7 +1,8 @@
+<form [formGroup]="interestsForm" (ngSubmit)="onSubmit()" *ngIf="!!interestsForm">
   <div class="col-lg-2 col-md-3 col-sm-4"  *ngFor="let interestsCategory of interestsCategories">
-    <thor-input-interests-category  [interestsCategory] = "interestsCategory" ></thor-input-interests-category>
+    <thor-input-interests-category [form]="interestsForm"  [interestsCategory] = "interestsCategory" ></thor-input-interests-category>
   </div>
 
-  <button type="submit"(click)="onClick(-1)" class="btn btn-primary">Back</button>
-  <button type="submit"(click)="onClick(1)" class="btn btn-primary">Submit</button>
-
+  <button type="button"(click)="onClick(-1)" class="btn btn-primary">Back</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

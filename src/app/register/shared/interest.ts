@@ -1,5 +1,5 @@
 export interface Interest {
-  id
+  id,
   name,
   image
 }
