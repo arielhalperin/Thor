@@ -1,0 +1,6 @@
+<div class="panel panel-default">
+  <div class="panel-heading">{{interestsCategory.name}}</div>
+  <div class="panel-body">
+    <thor-input-interest [form]="form" [interest] = "interest" *ngFor="let interest of interestsCategory.interests"></thor-input-interest>
+  </div>
+</div>
