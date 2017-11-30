@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {environment} from "../../../environments/environment";
 
 
 @Injectable()
@@ -10,7 +11,7 @@ export class CustomerService {
 
   getCustomers() {
     try {
-      return this.http.get('../../assets/customers.json');
+      return this.http.get(environment.ServerUrl + '/customers');
     } catch (error) {
       console.log(error);
       return error;
