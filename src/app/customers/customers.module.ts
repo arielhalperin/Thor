@@ -6,11 +6,13 @@ import {CustomerService} from './shared/customer.service';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import {HttpClientModule} from "@angular/common/http";
+import {InterestsModule} from "../interests/interests.module";
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    InterestsModule
   ],
   declarations: [CustomerComponent, CustomersListComponent],
   exports: [CustomersListComponent],
