@@ -1,3 +1,8 @@
-<p>
-  interests-list works!
+<p class="interestsTitle">
+  Interests List:
 </p>
+<div  *ngFor="let interest of interestsList;let index = index">
+
+  <thor-interest class="col-md-4" [interest]="interest"></thor-interest>
+</div>
+

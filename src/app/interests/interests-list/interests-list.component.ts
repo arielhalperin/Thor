@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {InterestsList} from '../shared/interests-list';
 
 @Component({
   selector: 'thor-interests-list',
@@ -8,9 +9,11 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class InterestsListComponent implements OnInit {
 
+  @Input() interestsList: InterestsList;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.interestsList);
   }
 
 }

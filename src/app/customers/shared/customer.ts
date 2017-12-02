@@ -1,5 +1,6 @@
 export interface Customer {
   name,
-  avatar
+  avatar,
+  interests
 }
 

@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {Interest} from '../shared/interest';
 
 @Component({
   selector: 'thor-interest',
@@ -8,9 +9,11 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class InterestComponent implements OnInit {
 
+  @Input() interest: Interest;
   constructor() { }
 
   ngOnInit() {
+    console.log("item");
   }
 
 }

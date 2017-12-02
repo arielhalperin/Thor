@@ -3,10 +3,13 @@
     <img src="{{ customer.img}}" alt="ImageAlt">
     <div class="caption">
       <h3>{{ customer.name }}</h3>
-      <p>Thumbnail Details</p>
       <div>
-        <thor-interests-list></thor-interests-list>
+        <thor-interests-list [interestsList]="customer.interests"></thor-interests-list>
       </div>
+
+    </div>
+
+    <div style="clear:both">
       <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
     </div>
   </div>
