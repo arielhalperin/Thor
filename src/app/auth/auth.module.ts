@@ -7,6 +7,7 @@ import {MatButtonModule, MatMenuModule, MatToolbarModule} from "@angular/materia
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule} from "@angular/router";
 import {FormsModule} from '@angular/forms';
+import {UserService} from "./shared/user.service";
 
 @NgModule({
   imports: [
@@ -19,8 +20,11 @@ import {FormsModule} from '@angular/forms';
     FormsModule
   ],
   declarations: [LoginComponent, LogoutComponent, AuthenticationComponent],
-  exports:[
+  exports: [
     AuthenticationComponent
+  ],
+  providers: [
+    UserService
   ]
 })
 export class AuthModule { }

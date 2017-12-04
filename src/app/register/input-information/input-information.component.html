@@ -15,5 +15,5 @@
   <div class="form-group">
     <input type="password" formControlName="informationRepeatPassword" class="form-control" id="informationRepeatPassword" placeholder="Repeat Password">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!generalInformationForm.valid">Submit</button>
 </form>

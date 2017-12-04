@@ -11,7 +11,7 @@ export class CustomerService {
 
   getCustomers() {
     try {
-      return this.http.get(environment.ServerUrl + '/customers');
+      return this.http.get(environment.ServerUrl + '/customer');
     } catch (error) {
       console.log(error);
       return error;

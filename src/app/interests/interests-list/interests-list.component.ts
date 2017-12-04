@@ -13,7 +13,6 @@ export class InterestsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.interestsList);
   }
 
 }
