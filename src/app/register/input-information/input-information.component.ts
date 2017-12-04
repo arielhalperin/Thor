@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {WizardService} from '../shared/wizard.service';
-import {UserService} from "../../auth/shared/user.service";
+import {AuthService} from "../../auth/shared/auth.service";
 import {User} from "../../auth/shared/user";
 
 
@@ -15,7 +15,7 @@ export class InputInformationComponent implements OnInit {
 
   generalInformationForm: FormGroup;
 
-  constructor(private wizardService: WizardService, private userService: UserService) { }
+  constructor(private wizardService: WizardService, private authService: AuthService) { }
 
   ngOnInit() {
     this.generalInformationForm = new FormGroup({
@@ -36,7 +36,7 @@ export class InputInformationComponent implements OnInit {
       password: this.generalInformationForm.value.informationPassword
     };
 
-    this.userService.saveUser(user);
+    this.authService.saveUser(user);
     this.wizardService.stepChange(1);
   }
 
