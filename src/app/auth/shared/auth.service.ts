@@ -14,11 +14,9 @@ export class AuthService {
 
   saveUser(user: User) {
     const body = JSON.stringify(user);
-    return this.http.post(environment.ServerUrl + '/user', body)
+    return this.http.post(environment.ServerUrl + '/user', user)
       .map((response: Response) => {
-        const result = response.json();
-
-        return result;
+        return response;
       })
       .catch((error: Response) => {
         return Observable.throw(error.json())
@@ -33,13 +31,21 @@ export class AuthService {
 
     return this.http.post(environment.ServerUrl + '/user/login', body)
       .map((response: Response) => {
-        const result = response.json();
+        const result = response;
 
         return result;
       })
       .catch((error: Response) => {
         return Observable.throw(error.json())
       });
+  }
+
+  logout() {
+    localStorage.clear();
+  }
+
+  isLoggedIn() {
+    return localStorage.getItem('token') !== null;
   }
 
 }

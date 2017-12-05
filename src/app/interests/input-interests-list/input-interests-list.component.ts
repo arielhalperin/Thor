@@ -15,6 +15,7 @@ export class InputInterestsListComponent implements OnInit, AfterViewInit {
   interestsForm: FormGroup;
   interestsControls: {};
 
+  userSelectedInterests;
   constructor(private interestService: InterestService, private wizardService: WizardService) {
     let formBuilder = new FormBuilder();
     this.interestService.getinterests().subscribe(interestsCategories => {
@@ -30,7 +31,7 @@ export class InputInterestsListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-
+    this.userSelectedInterests = [];
   }
 
   ngAfterViewInit(): void {
@@ -42,6 +43,12 @@ export class InputInterestsListComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit() {
+    let userInterests = [];
+    Object.keys(this.interestsForm.value).map((key) => {
+      if (this.interestsForm.value[key]) {
+        userInterests.push(this.interestsForm.value[key].value);
+      }
+    });
 
     this.onClick(1);
   }
