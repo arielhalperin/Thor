@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit, ViewEncapsulation} from '@angular/core
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {WizardService} from '../../register/shared/wizard.service';
 import {InterestService} from "../shared/interest.service";
+import {CustomerService} from "../../customers/shared/customer.service";
 
 @Component({
   selector: 'thor-input-interests-list',
@@ -16,7 +17,7 @@ export class InputInterestsListComponent implements OnInit, AfterViewInit {
   interestsControls: {};
 
   userSelectedInterests;
-  constructor(private interestService: InterestService, private wizardService: WizardService) {
+  constructor(private interestService: InterestService, private wizardService: WizardService, private customerService: CustomerService) {
     let formBuilder = new FormBuilder();
     this.interestService.getinterests().subscribe(interestsCategories => {
       this.interestsCategories = interestsCategories;
@@ -50,7 +51,9 @@ export class InputInterestsListComponent implements OnInit, AfterViewInit {
       }
     });
 
-    this.onClick(1);
+    this.customerService.changeCustomerInterests(userInterests)
+      .subscribe((data) => {
+        this.onClick(1);
+      });
   }
-
 }
