@@ -24,7 +24,7 @@ export class InputInterestsListComponent implements OnInit, AfterViewInit {
       this.interestsControls = {};
       for (let category of this.interestsCategories) {
         for (let intrest of category.interests) {
-          this.interestsControls['intrest-' + intrest.id] = [{value:intrest.id}];
+          this.interestsControls[intrest._id] = 0;
         }
       }
       this.interestsForm = formBuilder.group(this.interestsControls);
@@ -46,13 +46,14 @@ export class InputInterestsListComponent implements OnInit, AfterViewInit {
   onSubmit() {
     let userInterests = [];
     Object.keys(this.interestsForm.value).map((key) => {
-      if (this.interestsForm.value[key]) {
-        userInterests.push(this.interestsForm.value[key].value);
+      if (this.interestsForm.value[key] === true) {
+        userInterests.push( key );
       }
     });
 
     this.customerService.changeCustomerInterests(userInterests)
       .subscribe((data) => {
+
         this.onClick(1);
       });
   }

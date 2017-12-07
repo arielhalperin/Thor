@@ -36,11 +36,11 @@ export class InputInformationComponent implements OnInit {
       password: this.generalInformationForm.value.informationPassword
     };
 
-    // this.authService.saveUser(user)
-    //   .subscribe( (data) => {
-    //     console.log(data);
-    //   });
-    this.wizardService.stepChange(1);
+    this.authService.saveUser(user)
+      .subscribe( (data) => {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', data.user);
+        this.wizardService.stepChange(1);
+      });
   }
-
 }

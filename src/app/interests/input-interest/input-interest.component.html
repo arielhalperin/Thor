@@ -1,7 +1,7 @@
 <form class="form-check" [formGroup]="form">
 
   <label class="form-check-label">
-    <input class="form-check-input"  formControlName="intrest-{{interest.id}}" type="checkbox" >
+    <input class="form-check-input" value="{{interest._id}}" formControlName="{{interest._id}}" type="checkbox" >
       {{interest.name}}
   </label>
 </form>

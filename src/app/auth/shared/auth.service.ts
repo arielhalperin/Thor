@@ -13,13 +13,12 @@ export class AuthService {
   }
 
   saveUser(user: User) {
-    const body = JSON.stringify(user);
     return this.http.post(environment.ServerUrl + '/user', user)
       .map((response: Response) => {
         return response;
       })
       .catch((error: Response) => {
-        return Observable.throw(error.json())
+        return Observable.throw(error);
       });
   }
 
@@ -36,7 +35,7 @@ export class AuthService {
         return result;
       })
       .catch((error: Response) => {
-        return Observable.throw(error.json())
+        return Observable.throw(error);
       });
   }
 

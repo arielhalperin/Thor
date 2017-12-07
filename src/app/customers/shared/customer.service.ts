@@ -32,7 +32,7 @@ export class CustomerService {
         return result;
       })
       .catch((error: Response) => {
-        return Observable.throw(error.json());
+        return Observable.throw(error);
       });
   }
 }
