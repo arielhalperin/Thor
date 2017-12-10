@@ -2,7 +2,7 @@
   <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="contactUsEmail">Email address</label>
-      <input type="email" formControlName="email" class="form-control" id="contactUsEmail" placeholder="Email">
+      <input type="email" formControlName="email" [readonly]="isLoggedIn()" class="form-control" id="contactUsEmail" placeholder="Email" value="{{ email }}">
       <span class="invalidSpan" *ngIf ="!contactUsForm.get('email').valid && contactUsForm.get('email').touched">
         Please Enter valid Email
       </span>
